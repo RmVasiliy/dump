@@ -1,9 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	a := 14545
-	p := &a
-	fmt.Println("%x - %d", p, *p)
+	s := "123"
+	cwd, _ := os.Getwd()
+	fmt.Printf("%s", cwd)
+	func2(&s)
+	/*if (err!=nil) {
+		fmt.Println("Error")
+		panic(nil)
+	}*/
+	fmt.Printf("%s", s)
+}
+func func2(s *string) {
+	*s += ". its line!"
 }
